@@ -1,0 +1,13 @@
+version: "3"
+
+# services that we need for our application
+services:
+  app:
+    build:
+      context: .  # current directory
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python3 manage.py runserver 0.0.0.0:8000"
